@@ -1,15 +1,17 @@
 package com.example.androidaixnice
 
+
 import android.annotation.SuppressLint
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
+import android.widget.Button
 import android.widget.TextView
-import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 
+
 class ProfileDetailsActivity : AppCompatActivity() {
-    @RequiresApi(Build.VERSION_CODES.TIRAMISU)
+    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile_details)
@@ -28,6 +30,21 @@ class ProfileDetailsActivity : AppCompatActivity() {
 
         nameTextView.setText("NOM : ${profile?.name}")
         ageTextView.setText("AGE : ${profile?.age}")
+
+        //create dialog button
+
+        findViewById<Button>(R.id.show_dialog_btn).setOnClickListener {
+            val fragment = ConfirmDeleteDialogFragment()
+            fragment.listner = object : ConfirmDeleteDialogFragment.ConfirmDeleteListner{
+                override fun onDialogPositiveClick() {
+                    val fragment = FileListDialogFragment()
+                    fragment.show(supportFragmentManager, "fileListDialogFragment")
+                }
+
+                override fun onDialogNegativeClick() {}
+            }
+            fragment.show(supportFragmentManager, "fileListDialogFragment")
+        }
 
     }
 
