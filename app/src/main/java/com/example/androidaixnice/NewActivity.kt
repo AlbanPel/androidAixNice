@@ -11,11 +11,11 @@ class NewActivity : AppCompatActivity() {
         setContentView(R.layout.activity_new)
 
         var action = intent.action
-        Log.i(TAG, "action: $action")
-        Log.v(TAG, "Verbose message")
-        Log.d(TAG, "Debug message")
-        Log.i(TAG, "Info message")
-        Log.w(TAG, "Warning message")
-        Log.e(TAG, "Error message")
+        val isUserView = intent.hasCategory("user")
+        val extras : Bundle? = intent.extras
+        val name = extras?.getString("name")
+        val age = extras?.getInt("age")
+        Log.i(TAG, "action: $action, isUserViewer: $isUserView, name: $name, age: $age")
+
     }
 }

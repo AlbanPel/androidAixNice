@@ -23,5 +23,31 @@
         android:layout_height="wrap_content"
         android:text="Intent"
         />
+    <Button
+        android:id="@+id/parcelable_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="parcelable"
+        />
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:textSize="30dp"
+        android:text="Button dp"
+        android:textColor="#009688"
+        />
+
+    <Button
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:text="button SP"
+        android:textSize="25sp" />
+
+    <Button
+        android:layout_width="400px"
+        android:layout_height="150px"
+        android:text="btn en px"
+        />
+
 
 </LinearLayout>
