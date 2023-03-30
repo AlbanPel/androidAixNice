@@ -48,6 +48,12 @@
         android:layout_height="150px"
         android:text="btn en px"
         />
+    <Button
+        android:id="@+id/admin_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Admin"
+        />
 
 
 </LinearLayout>

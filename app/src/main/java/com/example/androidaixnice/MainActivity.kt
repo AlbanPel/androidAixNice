@@ -32,5 +32,12 @@ class MainActivity : AppCompatActivity() {
              startActivity(intent)
          }
 
+        //Btn Admin
+        val AdminBtn = findViewById<Button>(R.id.admin_btn)
+        AdminBtn.setOnClickListener {
+            val intent = Intent(this, Admin::class.java)
+            startActivity(intent)
+        }
+
     }
 }
